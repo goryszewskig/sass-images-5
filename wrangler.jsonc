@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "webapp",
+  "name": "ai-image-generator-saas",
   "compatibility_date": "2025-08-17",
   "pages_build_output_dir": "./dist",
   "compatibility_flags": [
@@ -9,8 +9,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "webapp-production",
-      "database_id": "temp-id-to-be-replaced"
+      "database_name": "ai-image-generator-production",
+      "database_id": "9ff3c9eb-6082-4a1e-9629-793a0a031287"
     }
   ]
   // "vars": {
