@@ -5,11 +5,10 @@
 - **Goal**: A complete SaaS application where users can generate AI images with a simple one-time payment model
 - **Features**: User authentication, payment processing, AI image generation, generation history, responsive design
 
-## 🌐 Live URLs
-- **Production**: https://ai-image-generator-saas.pages.dev
-- **Development**: https://706f0e23.ai-image-generator-saas.pages.dev
-- **API Base**: https://ai-image-generator-saas.pages.dev/api
+## 🌐 URLs
+- **Development**: http://localhost:3000 (local development only)
 - **GitHub**: https://github.com/goryszewskig/sass-images-5
+- **Production**: Not deployed (development/demo only)
 
 ## 🏗️ Tech Stack
 - **Backend**: Hono framework + TypeScript + Cloudflare Workers
@@ -139,12 +138,11 @@ curl -X POST http://localhost:3000/api/image/generate \
 - Analytics and usage tracking
 
 ## 🌐 Deployment Status
-- **Platform**: Cloudflare Pages
-- **Status**: ✅ Live in Production
-- **Database**: Cloudflare D1 (Production + Local Development)
-- **Domain**: ai-image-generator-saas.pages.dev
-- **SSL**: ✅ Fully secured with HTTPS
-- **Environment Variables**: ✅ Configured
+- **Platform**: Local Development Only
+- **Status**: ✅ Development Environment Active
+- **Database**: Local SQLite via Wrangler D1 emulation
+- **Domain**: localhost:3000 (development only)
+- **Public Access**: ❌ Removed for privacy
 - **Last Updated**: August 17, 2025
 
 ## 📋 Testing Scenarios

@@ -6,13 +6,13 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "ai-image-generator-production",
-      "database_id": "9ff3c9eb-6082-4a1e-9629-793a0a031287"
-    }
-  ]
+  // "d1_databases": [
+  //   {
+  //     "binding": "DB",
+  //     "database_name": "your-database-name",
+  //     "database_id": "your-database-id"
+  //   }
+  // ]
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },
