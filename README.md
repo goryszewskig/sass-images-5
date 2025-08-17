@@ -6,8 +6,9 @@
 - **Features**: User authentication, payment processing, AI image generation, generation history, responsive design
 
 ## 🌐 Live URLs
-- **Production**: https://3000-iwddwqrnw3rr1ixi80j5t-6532622b.e2b.dev
-- **API Base**: https://3000-iwddwqrnw3rr1ixi80j5t-6532622b.e2b.dev/api
+- **Production**: https://ai-image-generator-saas.pages.dev
+- **Development**: https://706f0e23.ai-image-generator-saas.pages.dev
+- **API Base**: https://ai-image-generator-saas.pages.dev/api
 - **GitHub**: https://github.com/goryszewskig/sass-images-5
 
 ## 🏗️ Tech Stack
@@ -138,10 +139,12 @@ curl -X POST http://localhost:3000/api/image/generate \
 - Analytics and usage tracking
 
 ## 🌐 Deployment Status
-- **Platform**: Cloudflare Pages (ready to deploy)
-- **Status**: ✅ Active Development Environment
-- **Database**: Local D1 SQLite (production DB ready to create)
-- **Domain**: Custom domain support available
+- **Platform**: Cloudflare Pages
+- **Status**: ✅ Live in Production
+- **Database**: Cloudflare D1 (Production + Local Development)
+- **Domain**: ai-image-generator-saas.pages.dev
+- **SSL**: ✅ Fully secured with HTTPS
+- **Environment Variables**: ✅ Configured
 - **Last Updated**: August 17, 2025
 
 ## 📋 Testing Scenarios
