@@ -2,7 +2,19 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 import { sign, verify } from 'hono/jwt'
-import bcrypt from 'bcryptjs'
+// Web Crypto API functions for password hashing (Cloudflare Workers compatible)
+async function hashPassword(password: string): Promise<string> {
+  const encoder = new TextEncoder()
+  const data = encoder.encode(password)
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+async function verifyPassword(password: string, hash: string): Promise<boolean> {
+  const newHash = await hashPassword(password)
+  return newHash === hash
+}
 import type { 
   HonoContext, 
   User, 
@@ -107,7 +119,7 @@ app.post('/api/auth/signup', async (c) => {
     }
     
     // Hash password
-    const passwordHash = await bcrypt.hash(password, 10)
+    const passwordHash = await hashPassword(password)
     
     // Create user
     const result = await c.env.DB.prepare(
@@ -159,7 +171,7 @@ app.post('/api/auth/login', async (c) => {
     }
     
     // Verify password
-    const isValidPassword = await bcrypt.compare(password, user.password_hash)
+    const isValidPassword = await verifyPassword(password, user.password_hash)
     if (!isValidPassword) {
       return c.json({ success: false, message: 'Invalid credentials' } as AuthResponse, 401)
     }
