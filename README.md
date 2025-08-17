@@ -8,7 +8,7 @@
 ## 🌐 Live URLs
 - **Production**: https://3000-iwddwqrnw3rr1ixi80j5t-6532622b.e2b.dev
 - **API Base**: https://3000-iwddwqrnw3rr1ixi80j5t-6532622b.e2b.dev/api
-- **GitHub**: (Repository to be configured)
+- **GitHub**: https://github.com/goryszewskig/sass-images-5
 
 ## 🏗️ Tech Stack
 - **Backend**: Hono framework + TypeScript + Cloudflare Workers
