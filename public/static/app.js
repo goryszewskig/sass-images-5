@@ -356,6 +356,29 @@ class AIImageSaaS {
     
     app.innerHTML = content
     
+    // Set up character counter for prompt input (only on dashboard)
+    if (this.state.currentPage === 'dashboard') {
+      const promptInput = document.getElementById('promptInput')
+      const charCount = document.getElementById('charCount')
+      
+      if (promptInput && charCount) {
+        // Update character count without causing re-render
+        const updateCharCount = () => {
+          charCount.textContent = promptInput.value.length
+        }
+        
+        // Set initial count
+        updateCharCount()
+        
+        // Add event listeners that don't trigger re-render
+        promptInput.addEventListener('input', updateCharCount)
+        promptInput.addEventListener('keyup', updateCharCount)
+        promptInput.addEventListener('paste', () => {
+          setTimeout(updateCharCount, 0) // Allow paste to complete first
+        })
+      }
+    }
+    
     // Load generation history when dashboard is rendered
     if (this.state.currentPage === 'dashboard' && this.state.user && this.state.generations.length === 0) {
       this.loadGenerationHistory()
@@ -811,7 +834,6 @@ class AIImageSaaS {
                   maxlength="500"
                   placeholder="A beautiful sunset over mountains, vibrant colors, digital art style..."
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none"
-                  onkeyup="document.getElementById('charCount').textContent = this.value.length"
                 ></textarea>
                 <div class="text-right text-sm text-gray-500 mt-1">
                   <span id="charCount">0</span>/500 characters
